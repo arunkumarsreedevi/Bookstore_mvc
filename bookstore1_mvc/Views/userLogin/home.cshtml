@@ -1,0 +1,14 @@
+﻿@model bookstore1_mvc.Models.logindb
+@{
+    ViewBag.Title = "home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>home</h2>
+<div>
+    @Html.ActionLink("viewprofile","profile_load", "userprofile")
+    </div>
+<div>
+    @Html.ActionLink("passwordchange", "psw_load", "psw_change")
+</div>
+

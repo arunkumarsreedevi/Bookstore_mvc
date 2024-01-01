@@ -1,0 +1,46 @@
+﻿@model bookstore1_mvc.Models.insertdb
+@{
+    ViewBag.Title = "reg_load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Book Registration</h2>
+<div>
+    @using (Html.BeginForm("reg_click", "Register", FormMethod.Post))//for file upload,new { enctype="multipart/form-data"}
+    {
+        <div><label>Book Name</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.name)
+            @Html.ValidationMessageFor(m => m.name)
+        </div>
+        <div><label>Author Name</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.details)
+            @Html.ValidationMessageFor(m => m.details)
+        </div>
+        <div><label>Price</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.price)
+            @Html.ValidationMessageFor(m => m.price)
+        </div>
+        <div><label>User name</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.username)
+            @Html.ValidationMessageFor(m => m.username)
+        </div>
+        <div><label>password</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.password)
+            @Html.ValidationMessageFor(m => m.password)
+        </div>
+        <div><label>Confirm password</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.cpassword)
+            @Html.ValidationMessageFor(m => m.cpassword)
+        </div>
+        <div><input type="submit" value="insert" />
+    @Html.DisplayFor(m=>m.msg)</div>
+    }
+
+</div>
+

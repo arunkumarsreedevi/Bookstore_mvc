@@ -1,0 +1,30 @@
+﻿@model bookstore1_mvc.Models.cgpswcls
+@{
+    ViewBag.Title = "psw_load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>pasword change</h2>
+
+<div>
+    @using (Html.BeginForm("psw_click", "passwordchange", FormMethod.Get))//for file upload,new { enctype="multipart/form-data"}
+    {
+        <div><label>current password</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.oldpsw)
+            @Html.ValidationMessageFor(m => m.oldpsw)
+        </div>
+        <div><label>New password</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.newpsw)
+            @Html.ValidationMessageFor(m => m.newpsw)
+        </div>
+        <div><label>confirm password</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.cpassword)
+            @Html.ValidationMessageFor(m => m.cpassword)
+        </div>
+        <div><input type="submit" value="reset passowrd" />
+    @Html.DisplayFor(m => m.msg)</div>
+    }
+</div>

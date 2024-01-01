@@ -1,0 +1,36 @@
+﻿@model bookstore1_mvc.Models.profileviewandedit
+@{
+    ViewBag.Title = "profile_load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>profile view</h2>
+<div>
+    @using (Html.BeginForm("profile_update", "userprofile", FormMethod.Get))//for file upload,new { enctype="multipart/form-data"}
+    {
+        <div><label>Book Name</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.name)
+
+        </div>
+        <div><label>Author Name</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.details)
+
+        </div>
+        <div><label>Price</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.price)
+
+        </div>
+        <div>
+            <input type="submit" value="update" />
+            @Html.DisplayFor(m => m.msg)
+        </div>
+        
+        <div>
+            @Html.ActionLink("back to home", "home", "userLogin")
+        </div>
+    }
+</div>
+
